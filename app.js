@@ -94,7 +94,7 @@ function enhanceRangeHitbox(slider){
    if(!rect.width)return;
    const min=Number(slider.min||0),max=Number(slider.max||100),step=Number(slider.step||1)||1;
    // Account for half the thumb at the extreme ends, so 0 and 100 remain reachable.
-   const thumb=Math.min(38,rect.width*.18);
+   const thumb=Math.min(20,rect.width*.12);
    const usable=Math.max(1,rect.width-thumb);
    const ratio=Math.max(0,Math.min(1,(event.clientX-rect.left-thumb/2)/usable));
    const value=Math.max(min,Math.min(max,min+Math.round((ratio*(max-min))/step)*step));
